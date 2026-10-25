@@ -42,7 +42,7 @@ INSERT INTO funcionarios (rut_funcionario, nombres, apellidos, edad, direccion, 
 ('30456789', 'Patricia', 'Tapia Rojas',    41, 'Calle Dean Funes 55, Córdoba',       'Swiss Medical', 3),
 ('20987654', 'Luis',     'Cárdenas Peña',  50, 'Av. Oroño 300, Rosario',             'OSDE',          4),
 ('32567890', 'Marcela',  'Lagos Ibáñez',   35, 'Calle Godoy Cruz 78, Mendoza',       'Galeno',        5),
-('35876543', 'Andrés',   'Mena Sepúlveda', 29, 'Av. Belgrano 900, Buenos Aires',     'IOMA',          1);
+('35876543', 'Andrés',   'Mena Sepúlveda', 29, 'Av. Belgrano 900, Buenos Aires',     'IOMA',          6);
 
 INSERT INTO bibliotecas (nombre) VALUES
 ('Biblioteca Central'),
