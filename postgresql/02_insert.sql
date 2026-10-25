@@ -18,7 +18,7 @@ INSERT INTO carreras (nombre, id_campus) VALUES
 ('Licenciatura en Enfermería',            5),
 ('Profesorado en Historia',               5);
 
-INSERT INTO estudiantes (rut_est, nombres, apellidos, edad, telefono, direccion, id_carrera) VALUES
+INSERT INTO estudiantes (dni_est, nombres, apellidos, edad, telefono, direccion, id_carrera) VALUES
 ('40123456', 'Camila',    'Rojas Pérez',     21, '+5491155551111', 'Av. Corrientes 1234, Buenos Aires',   1),
 ('38876543', 'Matías',    'González Soto',   23, '+5491155552222', 'Calle Defensa 45, Buenos Aires',      1),
 ('41034567', 'Valentina', 'Muñoz Díaz',      20, '+5493515553333', 'Bv. San Juan 780, Córdoba',           2),
@@ -34,7 +34,7 @@ INSERT INTO estudiantes (rut_est, nombres, apellidos, edad, telefono, direccion,
 ('39111222', 'Lucía',     'Benítez Ruiz',    27, '+5491155550004', 'Calle Tucumán 700, Buenos Aires',     2),
 ('41222333', 'Martín',    'Acosta Ledesma',  20, '+5493515550005', 'Av. Colón 1100, Córdoba',             4);
 
-INSERT INTO funcionarios (rut_funcionario, nombres, apellidos, edad, direccion, saludo, id_campus) VALUES
+INSERT INTO funcionarios (dni_funcionario, nombres, apellidos, edad, direccion, salud, id_campus) VALUES
 ('28345678', 'Carolina', 'Aguilar Ramos',  38, 'Calle Florida 100, Buenos Aires', 'Buena',          1),
 ('22234567', 'Roberto',  'Jara Molina',    45, 'Av. Cabildo 2000, Buenos Aires',  'Regular',          2),
 ('30456789', 'Patricia', 'Tapia Rojas',    41, 'Calle Dean Funes 55, Córdoba',    'Buena', 3),
@@ -88,7 +88,7 @@ INSERT INTO libros (cod_libro, titulo, anio, id_biblioteca, id_tipo, id_autor, i
 ('LIB-017', 'Adán Buenosayres',                  1948, 3, 1, 10, 5),
 ('LIB-018', 'El tamaño de mi esperanza',         1926, 3, 3, 4, 5);
 
-INSERT INTO prestamos (rut_est, rut_funcionario, cod_libro, fecha_prestamo, fecha_devolucion) VALUES
+INSERT INTO prestamos (dni_est, dni_funcionario, cod_libro, fecha_prestamo, fecha_devolucion) VALUES
 ('40123456', '28345678', 'LIB-001', '2026-03-02', '2026-03-16'),
 ('40123456', '28345678', 'LIB-007', '2026-04-10', '2026-04-24'),
 ('38876543', '22234567', 'LIB-009', '2026-03-05', '2026-03-19'),

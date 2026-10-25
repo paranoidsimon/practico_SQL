@@ -20,7 +20,7 @@ CREATE TABLE carreras (
 );
 
 CREATE TABLE estudiantes (
-    rut_est VARCHAR(12) PRIMARY KEY,
+    dni_est VARCHAR(12) PRIMARY KEY,
     nombres VARCHAR(50) NOT NULL,
     apellidos VARCHAR(50) NOT NULL,
     edad INT NOT NULL,
@@ -31,12 +31,12 @@ CREATE TABLE estudiantes (
 );
 
 CREATE TABLE funcionarios (
-    rut_funcionario VARCHAR(12) PRIMARY KEY,
+    dni_funcionario VARCHAR(12) PRIMARY KEY,
     nombres VARCHAR(50) NOT NULL,
     apellidos VARCHAR(50) NOT NULL,
     edad INT NOT NULL,
     direccion VARCHAR(100) NOT NULL,
-    saludo VARCHAR(50) NOT NULL,
+    salud VARCHAR(50) NOT NULL,
     id_campus INT NOT NULL,
     FOREIGN KEY (id_campus) REFERENCES campus(id_campus)
 );
