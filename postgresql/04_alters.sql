@@ -27,7 +27,9 @@ FROM (VALUES
     ('40567890', 'agustina.herrera@universidad.edu.ar'),
     ('41123456', 'tomas.ortiz@universidad.edu.ar'),
     ('40345678', 'catalina.nunez@universidad.edu.ar'),
-    ('36765432', 'nicolas.pizarro@universidad.edu.ar')
+    ('36765432', 'nicolas.pizarro@universidad.edu.ar'),
+    ('39111222', 'lucia.benitez@universidad.edu.ar'),
+    ('41222333', 'martin.acosta@universidad.edu.ar')
 ) AS v(dni, email)
 WHERE e.dni_est = v.dni;
 
@@ -38,29 +40,29 @@ FROM (VALUES
     ('30456789', 'patricia.tapia@biblioteca.edu.ar'),
     ('20987654', 'luis.cardenas@biblioteca.edu.ar'),
     ('32567890', 'marcela.lagos@biblioteca.edu.ar'),
-    ('35876543', 'andres.mena@biblioteca.edu.ar')
+    ('35876543', 'andres.mena@biblioteca.edu.ar'),
+    ('18555666', 'ernesto.quiroga@biblioteca.edu.ar')
 ) AS v(dni, email)
 WHERE f.dni_funcionario = v.dni;
 
 UPDATE libros l SET isbn = v.isbn
 FROM (VALUES
-    ('LIB-001', '978-950-07-0001-1'),
-    ('LIB-002', '978-950-07-0002-2'),
-    ('LIB-003', '978-950-07-0003-3'),
-    ('LIB-004', '978-950-07-0004-4'),
-    ('LIB-005', '978-950-07-0005-5'),
-    ('LIB-006', '978-950-07-0006-6'),
-    ('LIB-007', '978-950-07-0007-7'),
-    ('LIB-008', '978-950-07-0008-8'),
-    ('LIB-009', '978-950-07-0009-9'),
-    ('LIB-010', '978-950-07-0010-0'),
-    ('LIB-011', '978-950-07-0011-1'),
-    ('LIB-012', '978-950-07-0012-2'),
-    ('LIB-013', '978-950-07-0013-3'),
-    ('LIB-014', '978-950-07-0014-4'),
-    ('LIB-015', '978-950-07-0015-5')
+    ('LIB-001', '978-950-07-0001-1'), ('LIB-002', '978-950-07-0002-2'),
+    ('LIB-003', '978-950-07-0003-3'), ('LIB-004', '978-950-07-0004-4'),
+    ('LIB-005', '978-950-07-0005-5'), ('LIB-006', '978-950-07-0006-6'),
+    ('LIB-007', '978-950-07-0007-7'), ('LIB-008', '978-950-07-0008-8'),
+    ('LIB-009', '978-950-07-0009-9'), ('LIB-010', '978-950-07-0010-0'),
+    ('LIB-011', '978-950-07-0011-1'), ('LIB-012', '978-950-07-0012-2'),
+    ('LIB-013', '978-950-07-0013-3'), ('LIB-014', '978-950-07-0014-4'),
+    ('LIB-015', '978-950-07-0015-5'), ('LIB-016', '978-950-07-0016-6'),
+    ('LIB-017', '978-950-07-0017-7'), ('LIB-018', '978-950-07-0018-8')
 ) AS v(cod, isbn)
 WHERE l.cod_libro = v.cod;
 
--- todos los prestamos vencidos se marcan como devueltos
+-- prestamos vencidos, los marco como devueltos
 UPDATE prestamos SET estado = 'devuelto' WHERE fecha_devolucion < CURRENT_DATE;
+
+-- hago no nulos a los atributos agregados habiendolos actualizado con valores de ejemplo
+ALTER TABLE estudiantes  ALTER COLUMN email SET NOT NULL;
+ALTER TABLE funcionarios ALTER COLUMN email SET NOT NULL;
+ALTER TABLE libros       ALTER COLUMN isbn  SET NOT NULL;

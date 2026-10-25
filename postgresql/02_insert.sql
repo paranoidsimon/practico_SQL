@@ -1,16 +1,12 @@
 INSERT INTO ciudades (nombre) VALUES
-('Buenos Aires'),
-('Córdoba'),
-('Rosario'),
-('San Juan'),
-('Mendoza');
+('Buenos Aires'), ('Córdoba'), ('Rosario'), ('Mendoza');
 
 INSERT INTO campus (nombre, id_ciudad) VALUES
-('Campus Central',  1),
-('Campus Norte',    1),
-('Campus Córdoba',  2),
-('Campus Rosario',  3),
-('Campus Cuyo',     4);
+('Campus Central', 1),
+('Campus Norte',   1),
+('Campus Córdoba', 2),
+('Campus Rosario', 3),
+('Campus Cuyo',    4);
 
 INSERT INTO carreras (nombre, id_campus) VALUES
 ('Ingeniería en Sistemas de Información', 1),
@@ -34,43 +30,44 @@ INSERT INTO estudiantes (rut_est, nombres, apellidos, edad, telefono, direccion,
 ('40567890', 'Agustina',  'Herrera Mora',    21, '+5492615559999', 'Calle Las Heras 230, Mendoza',        8),
 ('41123456', 'Tomás',     'Ortiz Bravo',     20, '+5491155550001', 'Av. Rivadavia 450, Buenos Aires',     2),
 ('40345678', 'Catalina',  'Núñez Vera',      23, '+5491155550002', 'Calle Lavalle 88, Buenos Aires',      3),
-('36765432', 'Nicolás',   'Pizarro Gil',     26, '+5493415550003', 'Av. Alberdi 1500, Rosario',           1);
+('36765432', 'Nicolás',   'Pizarro Gil',     26, '+5493415550003', 'Av. Alberdi 1500, Rosario',           1),
+-- Nuevos: sin préstamos (consulta 2.17); Lucía además tiene más de 25 años (2.2)
+('39111222', 'Lucía',     'Benítez Ruiz',    27, '+5491155550004', 'Calle Tucumán 700, Buenos Aires',     2),
+('41222333', 'Martín',    'Acosta Ledesma',  20, '+5493515550005', 'Av. Colón 1100, Córdoba',             4);
 
 INSERT INTO funcionarios (rut_funcionario, nombres, apellidos, edad, direccion, saludo, id_campus) VALUES
-('28345678', 'Carolina', 'Aguilar Ramos',  38, 'Calle Florida 100, Buenos Aires',    'OSDE',          1),
-('22234567', 'Roberto',  'Jara Molina',    45, 'Av. Cabildo 2000, Buenos Aires',     'PAMI',          2),
-('30456789', 'Patricia', 'Tapia Rojas',    41, 'Calle Dean Funes 55, Córdoba',       'Swiss Medical', 3),
-('20987654', 'Luis',     'Cárdenas Peña',  50, 'Av. Oroño 300, Rosario',             'OSDE',          4),
-('32567890', 'Marcela',  'Lagos Ibáñez',   35, 'Calle Godoy Cruz 78, Mendoza',       'Galeno',        5),
-('35876543', 'Andrés',   'Mena Sepúlveda', 29, 'Av. Belgrano 900, Buenos Aires',     'IOMA',          6);
+('28345678', 'Carolina', 'Aguilar Ramos',  38, 'Calle Florida 100, Buenos Aires', 'Buena',          1),
+('22234567', 'Roberto',  'Jara Molina',    45, 'Av. Cabildo 2000, Buenos Aires',  'Regular',          2),
+('30456789', 'Patricia', 'Tapia Rojas',    41, 'Calle Dean Funes 55, Córdoba',    'Buena', 3),
+('20987654', 'Luis',     'Cárdenas Peña',  50, 'Av. Oroño 300, Rosario',          'Delicada',          4),
+('32567890', 'Marcela',  'Lagos Ibáñez',   35, 'Calle Godoy Cruz 78, Mendoza',    'Excelente',        5),
+('35876543', 'Andrés',   'Mena Sepúlveda', 29, 'Av. Belgrano 900, Buenos Aires',  'Regular',          1),
+('18555666', 'Ernesto',  'Quiroga Páez',   52, 'Calle Sarmiento 400, Mendoza',    'Delicada',          5);
 
 INSERT INTO bibliotecas (nombre) VALUES
-('Biblioteca Central'),
-('Biblioteca de Ciencias'),
-('Biblioteca de Humanidades');
+('Biblioteca Central'), ('Biblioteca de Ciencias'), ('Biblioteca de Humanidades');
 
 INSERT INTO autores (nombre, apellido) VALUES
-('Gabriel',    'García Márquez'),
-('Isabel',     'Allende'),
-('Alejandra',  'Pizarnik'),
-('Jorge Luis', 'Borges'),
-('Roberto',    'Bolaño'),
-('Julio',      'Cortázar'),
-('Alfonsina',  'Storni'),
-('Mario',      'Vargas Llosa');
+('Gabriel',    'García Márquez'),   -- 1
+('Isabel',     'Allende'),          -- 2
+('Alejandra',  'Pizarnik'),         -- 3
+('Jorge Luis', 'Borges'),           -- 4
+('Roberto',    'Bolaño'),           -- 5
+('Julio',      'Cortázar'),         -- 6
+('Alfonsina',  'Storni'),           -- 7
+('Mario',      'Vargas Llosa'),     -- 8
+('Manuel',     'Mujica Láinez'),    -- 9  (apellido con M, consulta 2.4)
+('Leopoldo',   'Marechal');         -- 10 (apellido con M)
 
 INSERT INTO tipo (nombre) VALUES
-('Novela'),
-('Poesía'),
-('Ensayo'),
-('Cuento');
+('Novela'), ('Poesía'), ('Ensayo'), ('Cuento');
 
 INSERT INTO editoriales (nombre, pais) VALUES
-('Alfaguara',    'España'),
-('Planeta',      'España'),
-('Sudamericana', 'Argentina'),
-('Anagrama',     'España'),
-('Emecé',        'Argentina');
+('Alfaguara',    'España'),      -- 1
+('Planeta',      'España'),      -- 2
+('Sudamericana', 'Argentina'),   -- 3 (consulta 2.3)
+('Anagrama',     'España'),      -- 4
+('Emecé',        'Argentina');   -- 5
 
 INSERT INTO libros (cod_libro, titulo, anio, id_biblioteca, id_tipo, id_autor, id_editorial) VALUES
 ('LIB-001', 'Cien años de soledad',              1967, 1, 1, 1, 3),
@@ -87,7 +84,11 @@ INSERT INTO libros (cod_libro, titulo, anio, id_biblioteca, id_tipo, id_autor, i
 ('LIB-012', 'Bestiario',                         1951, 3, 4, 6, 3),
 ('LIB-013', 'Languidez',                         1920, 3, 2, 7, 5),
 ('LIB-014', 'La ciudad y los perros',            1963, 2, 1, 8, 1),
-('LIB-015', 'La fiesta del chivo',               2000, 1, 1, 8, 1);
+('LIB-015', 'La fiesta del chivo',               2000, 1, 1, 8, 1),
+-- Nuevos, nunca prestados (consulta 2.18 y sección 3.3)
+('LIB-016', 'Bomarzo',                           1962, 2, 1, 9, 3),
+('LIB-017', 'Adán Buenosayres',                  1948, 3, 1, 10, 5),
+('LIB-018', 'El tamaño de mi esperanza',         1926, 3, 3, 4, 5);
 
 INSERT INTO prestamos (rut_est, rut_funcionario, cod_libro, fecha_prestamo, fecha_devolucion) VALUES
 ('40123456', '28345678', 'LIB-001', '2026-03-02', '2026-03-16'),
@@ -106,7 +107,13 @@ INSERT INTO prestamos (rut_est, rut_funcionario, cod_libro, fecha_prestamo, fech
 ('36765432', '35876543', 'LIB-004', '2026-07-06', '2026-07-20'),
 ('36765432', '28345678', 'LIB-001', '2026-08-03', '2026-08-17'),
 ('40123456', '22234567', 'LIB-012', '2026-08-10', '2026-08-24'),
-('38876543', '35876543', 'LIB-001', '2026-09-01', '2026-09-15'),
-('41034567', '30456789', 'LIB-001', '2026-09-14', '2026-09-28'),
+('40345678', '35876543', 'LIB-007', '2026-08-20', '2026-09-03'),
 ('40456789', '28345678', 'LIB-009', '2026-10-05', '2026-10-19'),
-('40234567', '30456789', 'LIB-007', '2026-10-12', '2026-10-26');
+('40234567', '30456789', 'LIB-007', '2026-10-12', '2026-10-26'),
+-- Mes anterior, relativo a la fecha de ejecución (consulta 2.19)
+('38876543', '35876543', 'LIB-001',
+    (date_trunc('month', CURRENT_DATE) - INTERVAL '1 month' + INTERVAL '3 days')::date,
+    (date_trunc('month', CURRENT_DATE) - INTERVAL '1 month' + INTERVAL '17 days')::date),
+('41034567', '30456789', 'LIB-001',
+    (date_trunc('month', CURRENT_DATE) - INTERVAL '1 month' + INTERVAL '13 days')::date,
+    (date_trunc('month', CURRENT_DATE) - INTERVAL '1 month' + INTERVAL '27 days')::date);
